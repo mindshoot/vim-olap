@@ -4,5 +4,5 @@
 " URL:         http://github.com/damienzhang/vim-olap
 
 augroup dmldetect
-    au! BufRead,BufNewFile *.dml setfiletype dml
+    au! BufRead,BufNewFile *.dml,*.EPR,*.epr setfiletype dml
 augroup END

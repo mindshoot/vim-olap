@@ -13,16 +13,18 @@ set commentstring="\"%s"
 set iskeyword=@,48-57,_,.,192-255
 
 syn case ignore
-syn keyword pcxStatement        define
-syn keyword pcxStatement        limit to keep remove
+syn keyword pcxStatement        define dfn log consider cns
+syn keyword pcxStatement        limit lmt to keep remove allstat comp complement
 syn keyword pcxStatement        pushlevel poplevel push pop
-syn keyword pcxStatement        argument variable
-syn keyword pcxStatement        maintain add delete
+syn keyword pcxStatement        argument arg variable vrb
+syn keyword pcxStatement        maintain mnt add delete move merge
+syn keyword pcxStatement        database dtb attach first last
+syn keyword pcxStatement        trap on error noprint return signal
 
-"syn keyword pcxType             integer text short boolean
-"syn keyword pcxType             temp
+syn keyword pcxType             integer int text short boolean bool
+syn keyword pcxType             temp valueset
 
-syn match pcxType "\v((variable|argument)\s+\S+\s+)@<=\S+"
+syn match pcxType "\v((variable|argument|vrb|arg)\s+\S+\s+)@<=\S+"
 
 syn keyword pcxDo               do doend
 
@@ -48,7 +50,7 @@ syn keyword pcxFunction    INSTR INTPART IRR ISDATE ISEMPTY ISSESSION ISVALUE JO
 syn keyword pcxFunction    JOINCHARS JOINCOLS JOINLINES KEY LAG LAGABSPCT LAGDIF LAGPCT
 syn keyword pcxFunction    LARGEST LAST_DAY LEAD LEAST LIMITMAPINFO LNNVL LOCALTIMESTAMP
 syn keyword pcxFunction    LOG LOG10 LOWCASE LPAD LTRIM MAKEDATE MAX MAXBYTES
-syn keyword pcxFunction    MAXCHARS MEDIAN MIN MMOF MODE MODULO MONTHS_BETWEEN MOVINGAVERAGE
+syn keyword pcxFunction    MAXCHARS MEDIAN MIN MMOF MODE MODULO MONTHS_BETWEEN MOD MOVINGAVERAGE
 syn keyword pcxFunction    MOVINGMAX MOVINGMIN MOVINGTOTAL NA2 NAFILL NAFLAG NEW_TIME NEXT_DAY
 syn keyword pcxFunction    NLSSORT NONE NORMAL NPV NULLIF NUMBYTES NUMCHARS NUMLINES
 syn keyword pcxFunction    NUMTODSINTERVAL NUMTOYMINTERVAL NVL NVL2 OBJ OBJLIST OBSCURE
@@ -65,7 +67,7 @@ syn keyword pcxFunction    TOD TODAY TOTAL TRANSLATE TRIGGER TRIM TRUNCATE TZ_OF
 syn keyword pcxFunction    UNIQUELINES UNRAVEL UPCASE VALSPERPAGE VALUES VINTSCHED
 syn keyword pcxFunction    VPMTSCHED WEEKOF WIDTH_BUCKET WKSDATA WRITABLE YYOF
 
-syn keyword pcxStatement        regress call report show
+syn keyword pcxStatement        regress call report rpr show shw
 syn keyword pcxRepeat           while for
 
 syn match  pcxComment   "\".*"
